@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(){
+  // constructor(){
 
-  }
+  // }
 
-  loadFeature:string;
+  // loadFeature:string;
 
-  OnClicked(event){
-      console.log(event);
-      this.loadFeature=event.clickCategory;
-  }
+  // OnClicked(event){
+  //     console.log(event);
+  //     this.loadFeature=event.clickCategory;
+  // }
 }

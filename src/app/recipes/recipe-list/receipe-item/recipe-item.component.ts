@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Recipe } from '../../recipes.model';
+import { Router } from '@angular/router';
 
+import { Recipe } from '../../recipes.model';
 
 @Component({
   selector: 'app-recipe-item',
@@ -9,19 +10,16 @@ import { Recipe } from '../../recipes.model';
 })
 export class ReceipeItemComponent implements OnInit {
   
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
 
   @Input() recipeItem:Recipe;
-
-  // @Output() itemClicked=new EventEmitter<{name:string,description:string,image:string,ingredients:string}>();
-  @Output() itemClicked=new EventEmitter<void>();
+  @Input() index:number;
   
-  clickItem(){
-    // this.itemClicked.emit({name:items.name,description:items.description,image:items.image,ingredients:items.ingredients});
-    this.itemClicked.emit();
+  onItemClick(){
+    this.router.navigate(['/recipe',this.index]);
   }
-  
+    
 }
